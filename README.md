@@ -23,14 +23,13 @@ have permissions that you may not have.
 
    Development helper scripts assume an up-to-date GNU tools environment. Recent Linux distros should work out-of-the-box.
 
-   macOS ships with outdated BSD-based tools. We recommend installing [macOS GNU tools](https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x).
+   **macOS** ships with outdated BSD-based tools. We recommend installing [macOS GNU tools](https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x).
 
 1. **Environment variables**.  Ensure that $GOPATH/bin is in your path:
 
    `export PATH=$PATH:${GOPATH:-$HOME/go}/bin`.
 
-1. **Azure CLI access**.  Log into Azure using the CLI using `az login` and your
-   credentials.
+1. **Azure CLI access**.  Log into Azure using the CLI using `az login` and your credentials.
 
 1. **OpenShift CI cluster access**.  Log in to the [CI
    cluster](https://api.ci.openshift.org/console/catalog) using `oc login` and a
@@ -40,13 +39,16 @@ have permissions that you may not have.
 
 1. **Codebase**.  Check out the codebase:
 
-   `go get github.com/openshift/openshift-azure/...`
+   ```bash
+   go get github.com/openshift/openshift-azure/...
+   ```
 
 1. **Secrets**.  Retrieve cluster creation secrets from the CI cluster:
-   ```
+
+```bash
    cd ${GOPATH:-$HOME/go}/src/github.com/openshift/openshift-azure
    make secrets
-   ```
+```
 
 1. **Environment file**.  Create an environment file:
 
